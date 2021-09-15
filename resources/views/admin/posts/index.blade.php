@@ -49,8 +49,20 @@
             </td>
           </tr>
         @endforeach
-
       </tbody>
     </table>
+
+    <h2>Post per categorie</h2>
+    @foreach($categories as $category)
+
+        <h3>{{$category->name}}</h3>
+
+        @forelse($category->post as $post)
+            <h4><a href="{{route('admin.posts.show', $post->slug)}} ">{{$post->title}}</a></h4>
+        @empty
+            <p>Non ci sono post per questa categoria</p>
+        @endforelse
+    @endforeach
+
   </div>
 @endsection
