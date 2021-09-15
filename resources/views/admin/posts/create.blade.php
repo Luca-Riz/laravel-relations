@@ -32,6 +32,21 @@
         @enderror
       </div>
 
+      {{-- selezione categoria --}}
+      <div class="mb-3">
+        <label for="cate" class="form-label">Categoria</label>
+        <select name="category_id" id="cate" class="form-control">
+          <option value="">--- Selezionare una categoria ---</option>
+          @foreach ($categories as $category)
+            <option value="{{ $category->id }}" 
+              @if ( old('category_id') == $category->id)
+                  selected
+              @endif 
+            >{{ $category->name }}</option>
+          @endforeach
+        </select>
+      </div>
+
       <div class="mb-3">
         <label for="desc" class="form-label">Descrizione</label>
         <textarea class="form-control
