@@ -1,8 +1,8 @@
 @extends('layouts.app');
 
 @section('content')
-  <div class="container">
-    <div class="container">
+  <div class="container-fluid">
+    <div>
 
       {{-- messaggio se il post é stato modificato --}}
       @if(session('updated'))

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 use App\Category;
 
 class CategoriesTableSeeder extends Seeder
@@ -23,6 +24,10 @@ class CategoriesTableSeeder extends Seeder
 
             // assegno valore a name istanza
             $newCategories->name = $category;
+
+            //slug
+            $slug = Str::slug($category, '-');
+            $newCategories->slug = $slug;
 
             //salvare i dati nella tabella
             $newCategories->save();
