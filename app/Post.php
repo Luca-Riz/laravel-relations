@@ -13,7 +13,10 @@ class Post extends Model
         'category_id' //? aggiunta questa riga dopo migrations/update_posts_table
     ];
 
-    public function postCategory(){
-        return $this->hasMany('App\Category');
+    public function category(){
+        return $this->belongsTo('App\Category');
     }
 }
+
+
+
